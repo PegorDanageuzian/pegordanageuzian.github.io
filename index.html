@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+<header>
+<link rel="icon" 
+      type="image/png" 
+      href="EmblemIcon.png">
+<title>Rabieh 1 Group Laws</title>
+<script src="SHA256.js"></script>
+</header>
+
+
+<body>
+<center>
+<img src="R1 Signature.png"><br>
+This page contains all the laws that are in effect in Rabieh 1 Group.<br>
+To verify that the file containing a specific law has not been tampered with,<br>
+please hash the specific file using the SHA256 algorithm and compare the result to the respective hash in this list.
+<br>
+
+<br>
+Select a file to calculate it's SHA256 hash value:<br><br>
+<input type='file' id="FileToHash" onchange='openFile(event)'><br><br>
+<div id="Hash"></div>
+<script>
+  var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+	var a =reader.result;
+	     
+      document.getElementById("Hash").innerHTML=rstr2hex(rstr_sha256(a));
+    };
+    reader.readAsBinaryString(input.files[0]);
+  };  
+</script>
+
+<br>
+Download Laws:<br>
+<a href="Absence Fine Law.pdf">Absence Fine Law.pdf</a>
+<br>
+Absence Fine Law Hash: 43dc71d504dfada77c30449e9b7fa424e56ee5d58dcbc592b86d796d936a77ad<br>
+
+<a href="Request Submission Law.pdf">Request Submission Law.pdf</a>
+<br>
+Request Submission Law Hash: 527eb0a818ac1a04122da01d74c4bdcceb09c47a698fa4f9bd36087aeab349b2<br>
+
+<a href="Member Activity Attendance Law.pdf">Member Activity Attendance Law.pdf</a>
+<br>
+Member Activity Attendance Law Hash: e97c4c63727067971223a9091b32b97206671a87a6e1fdd055c661ee5a0987bb<br>
+
+</center>
+</body>
+</html>
